@@ -2,12 +2,8 @@
 # react-native-multi-state-button
 
 
-A simple and customisable react-native multi-state button
+A simple react-native multi-state button
 
-## Features
-- Customizable state by array of height
-- Customizable speed during transition
-- Draggable 
 
 ## Demo
 

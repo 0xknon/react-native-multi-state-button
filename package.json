@@ -1,6 +1,6 @@
 {
   "name": "react-native-multi-state-button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Multiple state button for react-native",
   "keywords": [
     "react-native-multi-state-button",
@@ -25,5 +25,10 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knyuwork/react-native-multi-state-button/issues"
+  },
+  "homepage": "https://github.com/knyuwork/react-native-multi-state-button#readme"
 }
