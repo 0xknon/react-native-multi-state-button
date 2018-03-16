@@ -60,7 +60,7 @@ class MultipleStateButton extends React.Component {
                         }),
                     }]}, slidingBackgroundStyle]}>
                     <Text 
-                        style={[styles.buttonFont, {color: 'rgba(0,0,0,0)'}]}>
+                        style={[styles.buttonFontStyle, {color: 'rgba(0,0,0,0)'}]}>
                         {buttonsList[0].text}
                     </Text>
             </Animated.View>
@@ -69,7 +69,7 @@ class MultipleStateButton extends React.Component {
     }
 
     render() {
-        let { buttonFont, enableSlidingBackground, initialIndex, selectedColor, unselectedColor, style, width } = this.props;
+        let { buttonFontStyle, enableSlidingBackground, initialIndex, selectedColor, unselectedColor, style, width } = this.props;
         let { index } = this.state;
         return (
             <View style={[style, styles.container, {width}]}>
@@ -77,7 +77,7 @@ class MultipleStateButton extends React.Component {
                     <TouchableOpacity 
                         key={index} style={[styles.stateButton, {width: this.selectorWidth}]} 
                         onPress={() => this.onPress(index)}>
-                        <Text style={[buttonFont, !button.isSelected? {color: unselectedColor} : {color: selectedColor}]}>
+                        <Text style={[buttonFontStyle, !button.isSelected? {color: unselectedColor} : {color: selectedColor}]}>
                             {button.text}
                         </Text>
                     </TouchableOpacity>
@@ -151,15 +151,16 @@ const styles = StyleSheet.create({
 });
 
 MultipleStateButton.propTypes = {
-    style: PropTypes.object,
+    buttonsList: PropTypes.arrayOf(PropTypes.string).isRequired,
     width: PropTypes.number.isRequired,
+    style: PropTypes.object,
     enableSlidingBackground: PropTypes.bool,
     slidingBackgroundColor: PropTypes.string,
     selectedColor: PropTypes.string,
     unselectedColor: PropTypes.string,
     initialIndex: PropTypes.number,
     onStateChange: PropTypes.func,
-    buttonFont: PropTypes.object,
+    buttonFontStyle: PropTypes.object,
     slidingBackgroundStyle: PropTypes.object,
 };
 
@@ -171,7 +172,7 @@ MultipleStateButton.defaultProps = {
     unselectedColor: '#000',
     initialIndex: null,
     onStateChange: (index) => null,
-    buttonFont: null,
+    buttonFontStyle: null,
     slidingBackgroundStyle: null
 };
 
